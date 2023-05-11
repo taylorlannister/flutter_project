@@ -74,7 +74,7 @@ class _TapboxCState extends State<TapboxC> {
         child: Center(
           child: Text(
             widget.active ? 'Active' : 'Inactive',
-            style: TextStyle(fontSize: 32.0, color: Colors.white),
+            style: const TextStyle(fontSize: 32.0, color: Colors.white),
           ),
         ),
         width: 200.0,
@@ -92,3 +92,6 @@ class _TapboxCState extends State<TapboxC> {
     );
   }
 }
+
+///  混合状态管理
+/// 

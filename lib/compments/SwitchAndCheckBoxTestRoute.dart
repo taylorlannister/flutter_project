@@ -33,3 +33,5 @@ class _SwitchAndCheckBoxTestRoute extends State<SwitchAndCheckBoxTestRoute> {
     ]);
   }
 }
+
+/// 选中控件

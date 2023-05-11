@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/compments/router.dart';
 
 class ImageTaskWidget extends StatefulWidget {
   const ImageTaskWidget({super.key});
@@ -25,7 +26,7 @@ class ImageTaskState extends State<ImageTaskWidget> {
               image: AssetImage(
                   '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png')),
           // ElevatedButton(onPressed: , child: Text('+1'))
-          ElevatedButton(onPressed: onPress, child: const Text('+1')),
+          ElevatedButton(onPressed: pushWithRoute, child: const Text('+1')),
           Image.network(
             "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",
             width: 100,
@@ -38,4 +39,12 @@ class ImageTaskState extends State<ImageTaskWidget> {
       count++;
     });
   }
+
+  void pushWithRoute() {
+    onPress();
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return NewRoute();
+    }));
+  }
 }
+/// 计数器
