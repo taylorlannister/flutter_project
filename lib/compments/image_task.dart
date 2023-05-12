@@ -28,7 +28,7 @@ class ImageTaskState extends State<ImageTaskWidget> {
           // ElevatedButton(onPressed: , child: Text('+1'))
           ElevatedButton(onPressed: pushWithRoute, child: const Text('+1')),
           Image.network(
-            "https://avatars2.githubusercontent.com/u/20411648?s=460&v=4",
+            "https://5b0988e595225.cdn.sohucs.com/images/20180204/53c1d7cc3e0f422c825011d1f2107ca5.jpeg",
             width: 100,
           )
         ]));
