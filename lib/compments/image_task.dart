@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/compments/material_app.dart';
 import 'package:flutter_project/compments/router.dart';
 
 class ImageTaskWidget extends StatefulWidget {
@@ -12,12 +13,18 @@ class ImageTaskWidget extends StatefulWidget {
 
 class ImageTaskState extends State<ImageTaskWidget> {
   int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+          TextButton(
+              onPressed: pushToHomePage, child: const Text('toHomePage')),
+          TextButton(
+              onPressed: pushToUserCenterPage,
+              child: const Text('toUserCenterPage')),
           Text(
             '当前计数： $count',
             style: TextStyle(fontSize: 12.0),
@@ -42,9 +49,28 @@ class ImageTaskState extends State<ImageTaskWidget> {
 
   void pushWithRoute() {
     onPress();
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return NewRoute();
+
+    Navigator.push(context as BuildContext,
+        MaterialPageRoute(builder: (context) {
+      return const NewRoute();
+    }));
+  }
+
+  void pushToHomePage() {
+    Navigator.push(context as BuildContext,
+        MaterialPageRoute(builder: (context) {
+      return TipRoute(text: "HomePage");
+    }));
+  }
+
+  void pushToUserCenterPage() {
+    Navigator.push(context as BuildContext,
+        MaterialPageRoute(builder: (context) {
+      return TipRoute(text: "UserCenter");
     }));
   }
 }
 /// 计数器
+
+
+/// 
