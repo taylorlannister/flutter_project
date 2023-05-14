@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Router/router.dart';
 import 'package:flutter_project/compments/material_app.dart';
 import 'package:flutter_project/compments/router.dart';
+import 'package:get/instance_manager.dart';
+import 'package:get/route_manager.dart';
 
 class ImageTaskWidget extends StatefulWidget {
   const ImageTaskWidget({super.key});
@@ -21,7 +24,10 @@ class ImageTaskState extends State<ImageTaskWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
           TextButton(
-              onPressed: pushToHomePage, child: const Text('toHomePage')),
+              onPressed: () => {
+                    Get.toNamed(TaylorRouter.Home),
+                  },
+              child: const Text('toHomePage')),
           TextButton(
               onPressed: pushToUserCenterPage,
               child: const Text('toUserCenterPage')),
@@ -57,10 +63,11 @@ class ImageTaskState extends State<ImageTaskWidget> {
   }
 
   void pushToHomePage() {
-    Navigator.push(context as BuildContext,
-        MaterialPageRoute(builder: (context) {
-      return TipRoute(text: "HomePage");
-    }));
+    // Navigator.push(context as BuildContext,
+    // MaterialPageRoute(builder: (context) {
+    // return TipRoute(text: "HomePage");
+    // }));
+    Get.toNamed(TaylorRouter.Home);
   }
 
   void pushToUserCenterPage() {

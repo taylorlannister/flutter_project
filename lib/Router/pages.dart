@@ -1,8 +1,15 @@
 import 'package:flutter_project/Pages/home_page.dart';
+import 'package:flutter_project/Pages/main_tabbar_page.dart';
 import 'package:flutter_project/Pages/user_page.dart';
 import 'package:flutter_project/Router/router.dart';
+import 'package:get/route_manager.dart';
 
 class Pages {
-  static const String home = Router.Home;
-  static const String userCenter = Router.UserCenter;
+  static const String home = TaylorRouter.Home;
+  static const String userCenter = TaylorRouter.UserCenter;
+  static final List<GetPage> routes = [
+    GetPage(name: TaylorRouter.Home, page: () => const HomePage()),
+    GetPage(name: TaylorRouter.UserCenter, page: () => const UserCenterPage()),
+    GetPage(name: TaylorRouter.INITIAL, page: () => const MainTabbarPage())
+  ];
 }

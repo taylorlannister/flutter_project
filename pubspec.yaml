@@ -36,6 +36,60 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+# 网络请求框架
+  dio: ^3.0.10
+
+  # 骨骼框架
+  shimmer: ^2.0.0-nullsafety.0
+
+  # 屏幕适配
+  flutter_screenutil: ^5.0.0-nullsafety.7
+
+  # 状态管理(stable nullsafety)
+  provider: ^5.0.0
+
+  # 链式管理(stable nullsafety)
+  rxdart: ^0.26.0
+
+  # 设备信息(stable nullsafety)
+  device_info: ^2.0.0
+
+  # 本地存储(stable nullsafety)
+  shared_preferences: ^2.0.3
+
+  # toast弹窗
+  flutter_styled_toast: ^1.5.2+3
+
+  # 广播
+  event_bus: ^2.0.0
+
+  # 下拉刷新
+  pull_to_refresh: ^1.6.4
+
+  # 权限操作(stable nullsafety)
+  #  permission_handler: ^6.0.1
+
+  # 弹窗
+  fluttertoast: ^8.0.1-nullsafety.0
+
+  # loadding框架
+  flutter_easyloading: ^2.2.2
+
+  # 走马灯
+  carousel_slider: ^3.0.0
+
+  # 图片缓存框架
+  cached_network_image: ^2.0.0
+
+  # webView框架 - 1
+  flutter_inappwebview: ^5.1.0+4
+
+  # webView框架 - 2
+  #  webview_flutter: ^2.0.2
+
+  # 状态管理工具
+  get: ^4.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

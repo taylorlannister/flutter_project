@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserCenterPage extends StatefulWidget {
-  const UserCenterPage({required Key key}) : super(key: key);
+  const UserCenterPage({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
