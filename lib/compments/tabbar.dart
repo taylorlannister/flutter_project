@@ -14,16 +14,16 @@ class _TabbarState extends State<Tabbar> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("首页"),
+          title: const Text("首页"),
         ),
         // body: MyIconContainer01(Icons.search,color: Colors.black),
-        body: ImageTaskWidget(),
+        body: const ImageTaskWidget(),
         // 实现底部tabbar
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: this._currentIndex, // 初始化在哪个bar
+          currentIndex: _currentIndex, // 初始化在哪个bar
           onTap: (int index) {
             setState(() {
-              this._currentIndex = index;
+              _currentIndex = index;
             });
           },
           items: const <BottomNavigationBarItem>[

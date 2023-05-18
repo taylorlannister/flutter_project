@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/Router/router.dart';
 import 'package:flutter_project/compments/material_app.dart';
 import 'package:flutter_project/compments/router.dart';
-import 'package:get/instance_manager.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
 class ImageTaskWidget extends StatefulWidget {
@@ -31,6 +31,8 @@ class ImageTaskState extends State<ImageTaskWidget> {
           TextButton(
               onPressed: pushToUserCenterPage,
               child: const Text('toUserCenterPage')),
+          TextButton(
+              onPressed: () => {requestData()}, child: const Text("发起网络请求")),
           Text(
             '当前计数： $count',
             style: TextStyle(fontSize: 12.0),
@@ -76,6 +78,8 @@ class ImageTaskState extends State<ImageTaskWidget> {
       return TipRoute(text: "UserCenter");
     }));
   }
+
+  void requestData() {}
 }
 /// 计数器
 
