@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Pages/home_page.dart';
+import 'package:flutter_project/Pages/save_data.dart';
 import 'package:flutter_project/Pages/user_page.dart';
 
 class Tabbar extends StatefulWidget {
@@ -27,14 +28,17 @@ class _TabbarState extends State<Tabbar> {
             items: const [
               BottomNavigationBarItem(label: '首页', icon: Icon(Icons.wallet)),
               BottomNavigationBarItem(
-                  label: '用户中心', icon: Icon(Icons.all_inbox)),
+                  label: '用户中心', icon: Icon(Icons.abc_sharp)),
+              BottomNavigationBarItem(label: '数据持久化', icon: Icon(Icons.ac_unit))
             ],
           ),
           tabBuilder: (context, index) {
             if (index == 0) {
               return const HomePage();
-            } else {
+            } else if (index == 1) {
               return const UserCenterPage();
+            } else {
+              return const SaveDataPage();
             }
           },
         )
