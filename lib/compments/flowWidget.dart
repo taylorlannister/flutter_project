@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_project/widgets/layout_log_print.dart';
 
 class FlowWidget extends StatefulWidget {
   const FlowWidget({super.key});
@@ -38,5 +39,6 @@ class _FlowWidgetState extends State<FlowWidget> {
         ),
       ],
     );
+    const LayoutLogPrint(child: Text('Laurens'));
   }
 }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_project/compments/stackConstraints.dart';
 
 import '../compments/constraints.dart';
@@ -21,10 +19,10 @@ class _ConstraintShowingPageState extends State<ConstraintShowingPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // const FlowWidget(),
-          // const ConstraintsWidget(),
-          // const FlexWidget(),
-          StackConstraints()
+          const FlowWidget(),
+          const ConstraintsWidget(),
+          const FlexWidget(),
+          StackConstraints(),
         ],
       ),
     );

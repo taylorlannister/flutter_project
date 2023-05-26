@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Router/router.dart';
+import 'package:flutter_project/compments/flexWidget.dart';
 import 'package:flutter_project/compments/material_app.dart';
 import 'package:flutter_project/compments/router.dart';
+import 'package:flutter_project/widgets/layout_log_print.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 
@@ -16,6 +18,7 @@ class ImageTaskWidget extends StatefulWidget {
 
 class ImageTaskState extends State<ImageTaskWidget> {
   int count = 0;
+  Widget abc = const FlexWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +48,13 @@ class ImageTaskState extends State<ImageTaskWidget> {
           Image.network(
             "https://5b0988e595225.cdn.sohucs.com/images/20180204/53c1d7cc3e0f422c825011d1f2107ca5.jpeg",
             width: 100,
-          )
+          ),
+          abc
         ]));
   }
 
   void onPress() {
+    LayoutLogPrint(child: abc);
     setState(() {
       count++;
     });
