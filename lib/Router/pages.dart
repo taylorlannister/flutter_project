@@ -1,3 +1,4 @@
+import 'package:flutter_project/Pages/container_page.dart';
 import 'package:flutter_project/Pages/home_page.dart';
 import 'package:flutter_project/Pages/main_tabbar_page.dart';
 import 'package:flutter_project/Pages/user_page.dart';
@@ -10,6 +11,7 @@ class Pages {
   static final List<GetPage> routes = [
     GetPage(name: TaylorRouter.Home, page: () => const HomePage()),
     GetPage(name: TaylorRouter.UserCenter, page: () => const UserCenterPage()),
-    GetPage(name: TaylorRouter.INITIAL, page: () => const MainTabbarPage())
+    GetPage(name: TaylorRouter.INITIAL, page: () => const MainTabbarPage()),
+    GetPage(name: TaylorRouter.ContainerPage, page: () => const ContainerPage())
   ];
 }

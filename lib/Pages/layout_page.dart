@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Router/router.dart';
 import 'package:flutter_project/compments/stackConstraints.dart';
+import 'package:get/get.dart';
 
 import '../compments/constraints.dart';
 import '../compments/flexWidget.dart';
 import '../compments/flowWidget.dart';
 
-class ConstraintShowingPage extends StatefulWidget {
-  const ConstraintShowingPage({super.key});
+class LayoutShowingPage extends StatefulWidget {
+  const LayoutShowingPage({super.key});
 
   @override
-  State<ConstraintShowingPage> createState() => _ConstraintShowingPageState();
+  State<LayoutShowingPage> createState() => _LayoutShowingPageState();
 }
 
-class _ConstraintShowingPageState extends State<ConstraintShowingPage> {
+class _LayoutShowingPageState extends State<LayoutShowingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +24,15 @@ class _ConstraintShowingPageState extends State<ConstraintShowingPage> {
           const FlowWidget(),
           const ConstraintsWidget(),
           const FlexWidget(),
-          StackConstraints(),
+          const StackConstraints(),
+          ElevatedButton(
+              onPressed: showContainerPage, child: const Text('容器类组件')),
         ],
       ),
     );
+  }
+
+  void showContainerPage() {
+    Get.toNamed(TaylorRouter.ContainerPage);
   }
 }

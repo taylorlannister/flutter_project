@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/Pages/constraint_page.dart';
+import 'package:flutter_project/Pages/layout_page.dart';
 import 'package:flutter_project/Pages/home_page.dart';
 import 'package:flutter_project/Pages/save_data.dart';
 import 'package:flutter_project/Pages/user_page.dart';
@@ -44,7 +44,7 @@ class _TabbarState extends State<Tabbar> {
             } else if (index == 2) {
               return const SaveDataPage();
             } else {
-              return const ConstraintShowingPage();
+              return const LayoutShowingPage();
             }
           },
         )
