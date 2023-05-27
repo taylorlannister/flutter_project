@@ -10,8 +10,8 @@ class ContainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.only(top: 10, left: 120),
-        constraints: BoxConstraints.tightFor(width: 200, height: 150),
+        margin: EdgeInsets.only(top: 0, left: 120),
+        constraints: BoxConstraints.tightFor(width: 90, height: 60),
         decoration: BoxDecoration(
           gradient: RadialGradient(
               colors: [Colors.red, Colors.orange],
