@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_project/widgets/ClipTestRoute.dart';
+import 'package:flutter_project/widgets/contain_widget.dart';
 import 'package:flutter_project/widgets/decorated_box.dart';
 import 'package:flutter_project/widgets/padding_test_route.dart';
+import 'package:flutter_project/widgets/transform_widget.dart';
 
 class ContainerPage extends StatefulWidget {
   const ContainerPage({Key? key}) : super(key: key);
@@ -19,6 +22,9 @@ class _ContainerPageState extends State<ContainerPage> {
         children: const [
           PaddingTestRoute(),
           DecoratedBoxWidget(),
+          TransformWidget(),
+          ContainWidget(),
+          ClipTestRoute()
         ],
       ),
     );
