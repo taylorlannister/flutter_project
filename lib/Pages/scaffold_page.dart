@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_project/Pages/bussiness_page.dart';
+import 'package:flutter_project/Pages/home_page.dart';
+import 'package:flutter_project/Pages/school_page.dart';
 import 'package:flutter_project/widgets/my_drawer.dart';
 
 class ScaffoldRoute extends StatefulWidget {
@@ -12,6 +15,7 @@ class ScaffoldRoute extends StatefulWidget {
 
 class _ScaffoldRouteState extends State<ScaffoldRoute> {
   int _selectedIndex = 1;
+  final PageController _controller = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +41,16 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
         child: Icon(Icons.add),
         onPressed: _onAdd,
       ),
+      body: PageView(
+        controller: _controller,
+        children: <Widget>[HomePage(), BussinessPage(), SchoolPage()],
+      ),
     );
   }
 
   void _onItemTapped(int index) {
     setState(() {
+      _controller.jumpToPage(index);
       _selectedIndex = index;
     });
   }

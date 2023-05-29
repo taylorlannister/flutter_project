@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Router/pages.dart';
 import 'package:flutter_project/Router/router.dart';
-import 'package:flutter_project/compments/ParentWidgetC.dart';
-// import 'package:flutter_project/compments/image_task.dart';
-import 'package:flutter_project/compments/SwitchAndCheckBoxTestRoute.dart';
 import 'package:flutter_project/compments/image_task.dart';
-import 'package:flutter_project/compments/taskItem.dart';
 import 'package:get/get.dart';
 
 void main() {
