@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_project/Pages/animated_list_page.dart';
 import 'package:flutter_project/Pages/bussiness_page.dart';
 import 'package:flutter_project/Pages/home_page.dart';
 import 'package:flutter_project/Pages/school_page.dart';
@@ -39,17 +40,9 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
         fixedColor: Colors.blue,
         onTap: _onItemTapped,
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: _onAdd,
-      ),
       body: PageView(
         controller: _controller,
-        children: <Widget>[
-          HomePage(),
-          ScrollControllerTestRoute(),
-          SchoolPage()
-        ],
+        children: <Widget>[HomePage(), AnimatedListRoute(), SchoolPage()],
       ),
     );
   }
