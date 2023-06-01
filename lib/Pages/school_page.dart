@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_project/Pages/scroll_controller.dart';
 
 class SchoolPage extends StatefulWidget {
   const SchoolPage({super.key});
@@ -15,7 +16,7 @@ class _SchoolPageState extends State<SchoolPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('SchoolPage'),
+        child: const ScrollControllerTestRoute(),
       ),
     );
   }

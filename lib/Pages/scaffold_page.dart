@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_project/Pages/bussiness_page.dart';
 import 'package:flutter_project/Pages/home_page.dart';
 import 'package:flutter_project/Pages/school_page.dart';
+import 'package:flutter_project/Pages/scroll_controller.dart';
+import 'package:flutter_project/Pages/scroll_notificationTestRoute.dart';
 import 'package:flutter_project/widgets/my_drawer.dart';
 
 class ScaffoldRoute extends StatefulWidget {
@@ -43,7 +45,11 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
       ),
       body: PageView(
         controller: _controller,
-        children: <Widget>[HomePage(), BussinessPage(), SchoolPage()],
+        children: <Widget>[
+          HomePage(),
+          ScrollControllerTestRoute(),
+          SchoolPage()
+        ],
       ),
     );
   }
