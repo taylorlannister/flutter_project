@@ -3,7 +3,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_project/Pages/animated_list_page.dart';
 import 'package:flutter_project/Pages/bussiness_page.dart';
+import 'package:flutter_project/Pages/gardlist_page.dart';
 import 'package:flutter_project/Pages/home_page.dart';
+import 'package:flutter_project/Pages/infinitegradview_page.dart';
 import 'package:flutter_project/Pages/school_page.dart';
 import 'package:flutter_project/Pages/scroll_controller.dart';
 import 'package:flutter_project/Pages/scroll_notificationTestRoute.dart';
@@ -42,7 +44,11 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
       ),
       body: PageView(
         controller: _controller,
-        children: <Widget>[HomePage(), AnimatedListRoute(), SchoolPage()],
+        children: <Widget>[
+          GradListPage(),
+          AnimatedListRoute(),
+          InfiniteGridView()
+        ],
       ),
     );
   }
