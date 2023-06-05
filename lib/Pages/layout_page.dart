@@ -7,6 +7,8 @@ import '../compments/constraints.dart';
 import '../compments/flexWidget.dart';
 import '../compments/flowWidget.dart';
 
+import 'event_bus.dart';
+
 class LayoutShowingPage extends StatefulWidget {
   const LayoutShowingPage({super.key});
 
@@ -15,6 +17,17 @@ class LayoutShowingPage extends StatefulWidget {
 }
 
 class _LayoutShowingPageState extends State<LayoutShowingPage> {
+  var eventBusFn = eventBus.on<EventFn>().listen((event) {
+    print(event.obj);
+  });
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    eventBusFn.cancel();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
