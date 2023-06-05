@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Pages/event_bus.dart';
+import 'package:flutter_project/Router/router.dart';
 import 'package:flutter_project/compments/constraints.dart';
 import 'package:flutter_project/compments/flexWidget.dart';
 import 'package:flutter_project/compments/flowWidget.dart';
+import 'package:flutter_project/widgets/notification_route.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'bussiness_page.dart';
 
@@ -24,6 +27,7 @@ class _SaveDataPageState extends State<SaveDataPage> {
         children: [
           ElevatedButton(onPressed: saveData, child: Text('保存数据')),
           ElevatedButton(onPressed: showData, child: Text('刷新显示数据')),
+          NotificationRoute()
         ],
       ),
     );
@@ -32,7 +36,6 @@ class _SaveDataPageState extends State<SaveDataPage> {
   Future<void> saveData() async {
     final prefs = await SharedPreferences.getInstance();
     prefs.setString('key', 'saveValue112');
-
     eventBus.fire(EventFn({'a': 'b', 'c': 'e'}));
   }
 

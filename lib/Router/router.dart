@@ -4,4 +4,5 @@ class TaylorRouter {
   static const String INITIAL = "/MainTabberPage";
   static const String ContainerPage = "/ContainerPage";
   static const String ScrollPage = "/ScrollControllerPage";
+  static const String NotificationPage = "/NotificationRoute";
 }

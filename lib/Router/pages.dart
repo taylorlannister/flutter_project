@@ -2,6 +2,7 @@ import 'package:flutter_project/Pages/container_page.dart';
 import 'package:flutter_project/Pages/home_page.dart';
 import 'package:flutter_project/Pages/main_tabbar_page.dart';
 import 'package:flutter_project/Pages/scroll_controller.dart';
+import 'package:flutter_project/Pages/scroll_notificationTestRoute.dart';
 import 'package:flutter_project/Pages/user_page.dart';
 import 'package:flutter_project/Router/router.dart';
 import 'package:get/route_manager.dart';
@@ -18,5 +19,8 @@ class Pages {
     GetPage(
         name: TaylorRouter.ScrollPage,
         page: () => const ScrollControllerTestRoute()),
+    GetPage(
+        name: TaylorRouter.NotificationPage,
+        page: () => ScrollNotificationTestRoute()),
   ];
 }
