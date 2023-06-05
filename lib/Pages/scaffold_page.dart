@@ -9,6 +9,7 @@ import 'package:flutter_project/Pages/infinitegradview_page.dart';
 import 'package:flutter_project/Pages/school_page.dart';
 import 'package:flutter_project/Pages/scroll_controller.dart';
 import 'package:flutter_project/Pages/scroll_notificationTestRoute.dart';
+import 'package:flutter_project/Pages/tabview_route.dart';
 import 'package:flutter_project/widgets/my_drawer.dart';
 
 class ScaffoldRoute extends StatefulWidget {
@@ -36,7 +37,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.business), label: 'Business'),
-          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School')
+          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
         ],
         currentIndex: _selectedIndex,
         fixedColor: Colors.blue,
@@ -47,6 +48,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
         children: <Widget>[
           GradListPage(),
           AnimatedListRoute(),
+          InfiniteGridView(),
           InfiniteGridView()
         ],
       ),
