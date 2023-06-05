@@ -15,25 +15,33 @@ class _NotificationRouteState extends State<NotificationRoute> {
   @override
   Widget build(BuildContext context) {
     return NotificationListener<MyNotification>(
-        onNotification: (notification) {
-          setState(() {
-            _msg += notification.msg + " ";
-          });
-          return true;
-        },
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Builder(builder: (context) {
-                return ElevatedButton(
-                    onPressed: () => MyNotification('Hi').dispatch(context),
-                    child: Text('Send Notification'));
-              }),
-              Text(_msg)
-            ],
-          ),
-        ));
+      onNotification: (notification) {
+        setState(() {
+          print(notification.msg);
+        });
+        return false;
+      },
+      child: NotificationListener<MyNotification>(
+          onNotification: (notification) {
+            setState(() {
+              _msg += notification.msg + " ";
+            });
+            return true;
+          },
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Builder(builder: (context) {
+                  return ElevatedButton(
+                      onPressed: () => MyNotification('Hi').dispatch(context),
+                      child: Text('Send Notification'));
+                }),
+                Text(_msg)
+              ],
+            ),
+          )),
+    );
   }
 }
 
