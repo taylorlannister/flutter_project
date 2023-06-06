@@ -25,9 +25,10 @@ class _SaveDataPageState extends State<SaveDataPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: saveData, child: Text('保存数据')),
+          ElevatedButton(onPressed: saveData, child: Text('保存111数据')),
           ElevatedButton(onPressed: showData, child: Text('刷新显示数据')),
-          NotificationRoute()
+          NotificationRoute(),
+          buildLoginInputTextField()
         ],
       ),
     );
@@ -42,5 +43,26 @@ class _SaveDataPageState extends State<SaveDataPage> {
   Future<void> showData() async {
     final per = await SharedPreferences.getInstance();
     print(per.getString('key'));
+  }
+
+  Widget buildLoginInputTextField() {
+    return Column(
+      children: [
+        TextField(
+          autofocus: true,
+          decoration: InputDecoration(
+              labelText: '用户名',
+              hintText: '用户名或邮箱',
+              prefixIcon: Icon(Icons.person)),
+        ),
+        TextField(
+          decoration: InputDecoration(
+              labelText: "密码",
+              hintText: "您的登录密码",
+              prefixIcon: Icon(Icons.lock)),
+          obscureText: true,
+        ),
+      ],
+    );
   }
 }
