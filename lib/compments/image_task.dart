@@ -38,7 +38,7 @@ class ImageTaskState extends State<ImageTaskWidget> {
               onPressed: () => {requestData()}, child: const Text("发起网络请求")),
           Text(
             '当前计数： $count',
-            style: TextStyle(fontSize: 12.0),
+            style: const TextStyle(fontSize: 12.0),
           ),
           const Image(
               image: AssetImage(
@@ -63,7 +63,7 @@ class ImageTaskState extends State<ImageTaskWidget> {
   void pushWithRoute() {
     onPress();
 
-    Navigator.push(context as BuildContext,
+    Navigator.push(context,
         MaterialPageRoute(builder: (context) {
       return const NewRoute();
     }));
@@ -78,9 +78,9 @@ class ImageTaskState extends State<ImageTaskWidget> {
   }
 
   void pushToUserCenterPage() {
-    Navigator.push(context as BuildContext,
+    Navigator.push(context,
         MaterialPageRoute(builder: (context) {
-      return TipRoute(text: "UserCenter");
+      return const TipRoute(text: "UserCenter");
     }));
   }
 

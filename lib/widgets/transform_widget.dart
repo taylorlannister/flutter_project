@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:get/get.dart';
 
 class TransformWidget extends StatelessWidget {
   const TransformWidget({super.key});
@@ -11,6 +7,7 @@ class TransformWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Padding(
+            padding: const EdgeInsets.all(60),
             child: Container(
               color: Colors.black,
               height: 200,
@@ -23,7 +20,6 @@ class TransformWidget extends StatelessWidget {
                   child: const Text('Apartment for rent !'),
                 ),
               ),
-            ),
-            padding: EdgeInsets.all(60)));
+            )));
   }
 }

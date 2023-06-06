@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class GradListPage extends StatefulWidget {
   const GradListPage({super.key});
@@ -22,12 +20,12 @@ class _GradListPageState extends State<GradListPage> {
   List<Widget> buildWidget(BuildContext context) {
     var widgetList = <Widget>[];
     List iconsSet = [
-      Icon(Icons.ac_unit),
-      Icon(Icons.airport_shuttle),
-      Icon(Icons.all_inclusive),
-      Icon(Icons.beach_access),
-      Icon(Icons.cake),
-      Icon(Icons.free_breakfast)
+      const Icon(Icons.ac_unit),
+      const Icon(Icons.airport_shuttle),
+      const Icon(Icons.all_inclusive),
+      const Icon(Icons.beach_access),
+      const Icon(Icons.cake),
+      const Icon(Icons.free_breakfast)
     ];
 
     for (var i = 0; i < iconsSet.length; i++) {
@@ -43,7 +41,7 @@ class _GradListPageState extends State<GradListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: GridView(
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 120,
                 mainAxisSpacing: 10,
                 mainAxisExtent: 190,

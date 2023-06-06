@@ -11,7 +11,7 @@ class ConstraintsWidget extends StatefulWidget {
 class _ConstraintsWidgetState extends State<ConstraintsWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       //测试Row对齐方式，排除Column默认居中对齐的干扰
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[

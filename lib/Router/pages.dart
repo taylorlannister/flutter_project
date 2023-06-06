@@ -21,6 +21,6 @@ class Pages {
         page: () => const ScrollControllerTestRoute()),
     GetPage(
         name: TaylorRouter.NotificationPage,
-        page: () => ScrollNotificationTestRoute()),
+        page: () => const ScrollNotificationTestRoute()),
   ];
 }

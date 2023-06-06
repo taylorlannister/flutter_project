@@ -9,10 +9,10 @@ class NewRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("New route"),
+          title: const Text("New route"),
         ),
-        body: Column(
-          children: const [
+        body: const Column(
+          children: [
             TaskItem(label: "label1 is a test"),
             TaskItem(label: "label2 is a test 2"),
             TaskItem(label: "label3 is a test 3"),

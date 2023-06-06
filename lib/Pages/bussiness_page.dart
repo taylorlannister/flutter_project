@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class BussinessPage extends StatefulWidget {
   const BussinessPage({super.key});
@@ -12,7 +10,7 @@ class BussinessPage extends StatefulWidget {
 class _BussinessPageState extends State<BussinessPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text('Bussiness'),
       ),

@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_project/Pages/scroll_controller.dart';
 
 class SchoolPage extends StatefulWidget {
@@ -14,9 +11,9 @@ class SchoolPage extends StatefulWidget {
 class _SchoolPageState extends State<SchoolPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
-        child: const ScrollControllerTestRoute(),
+        child: ScrollControllerTestRoute(),
       ),
     );
   }

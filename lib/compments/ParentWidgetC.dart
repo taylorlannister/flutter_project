@@ -27,7 +27,7 @@ class _ParentWidgetCState extends State<ParentWidgetC> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  TapboxC({Key? key, this.active: false, required this.onChanged})
+  const TapboxC({Key? key, this.active = false, required this.onChanged})
       : super(key: key);
 
   final bool active;
@@ -71,12 +71,6 @@ class _TapboxCState extends State<TapboxC> {
       onTap: _handleTap,
       onTapCancel: _handleTapCancel,
       child: Container(
-        child: Center(
-          child: Text(
-            widget.active ? 'Active' : 'Inactive',
-            style: const TextStyle(fontSize: 32.0, color: Colors.white),
-          ),
-        ),
         width: 200.0,
         height: 200.0,
         decoration: BoxDecoration(
@@ -87,6 +81,12 @@ class _TapboxCState extends State<TapboxC> {
                   width: 10.0,
                 )
               : null,
+        ),
+        child: Center(
+          child: Text(
+            widget.active ? 'Active' : 'Inactive',
+            style: const TextStyle(fontSize: 32.0, color: Colors.white),
+          ),
         ),
       ),
     );

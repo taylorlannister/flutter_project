@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ContainWidget extends StatelessWidget {
   const ContainWidget({super.key});
@@ -10,9 +7,9 @@ class ContainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.only(top: 0, left: 120),
-        constraints: BoxConstraints.tightFor(width: 90, height: 60),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.only(top: 0, left: 120),
+        constraints: const BoxConstraints.tightFor(width: 90, height: 60),
+        decoration: const BoxDecoration(
           gradient: RadialGradient(
               colors: [Colors.red, Colors.orange],
               center: Alignment.center,
@@ -28,7 +25,7 @@ class ContainWidget extends StatelessWidget {
         transform: Matrix4.rotationZ(.2),
         alignment: Alignment.center,
         child:
-            Text('5.20', style: TextStyle(color: Colors.white, fontSize: 40.0)),
+            const Text('5.20', style: TextStyle(color: Colors.white, fontSize: 40.0)),
       ),
     );
   }

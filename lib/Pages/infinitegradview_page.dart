@@ -1,13 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InfiniteGridView extends StatefulWidget {
+  const InfiniteGridView({super.key});
+
   @override
   _InfiniteGridViewState createState() => _InfiniteGridViewState();
 }
 
 class _InfiniteGridViewState extends State<InfiniteGridView> {
-  List<IconData> _icons = []; //保存Icon数据
+  final List<IconData> _icons = []; //保存Icon数据
 
   @override
   void initState() {
@@ -19,7 +20,7 @@ class _InfiniteGridViewState extends State<InfiniteGridView> {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3, //每行三列
         childAspectRatio: 1.0, //显示区域宽高相等
       ),
@@ -36,7 +37,7 @@ class _InfiniteGridViewState extends State<InfiniteGridView> {
 
   //模拟异步获取数据
   void _retrieveIcons() {
-    Future.delayed(Duration(milliseconds: 200)).then((e) {
+    Future.delayed(const Duration(milliseconds: 200)).then((e) {
       setState(() {
         _icons.addAll([
           Icons.ac_unit,

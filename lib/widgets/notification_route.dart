@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/widgets.dart';
 
 class NotificationRoute extends StatefulWidget {
   const NotificationRoute({super.key});
@@ -24,7 +21,7 @@ class _NotificationRouteState extends State<NotificationRoute> {
       child: NotificationListener<MyNotification>(
           onNotification: (notification) {
             setState(() {
-              _msg += notification.msg + " ";
+              _msg += "${notification.msg} ";
             });
             return true;
           },
@@ -35,7 +32,7 @@ class _NotificationRouteState extends State<NotificationRoute> {
                 Builder(builder: (context) {
                   return ElevatedButton(
                       onPressed: () => MyNotification('Hi').dispatch(context),
-                      child: Text('Send Notification'));
+                      child: const Text('Send Notification'));
                 }),
                 Text(_msg)
               ],

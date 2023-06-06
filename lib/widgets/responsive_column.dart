@@ -1,5 +1,3 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 
 class ResponsiveColumn extends StatelessWidget {
@@ -12,20 +10,20 @@ class ResponsiveColumn extends StatelessWidget {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       if (constraints.maxWidth < 200) {
-        return Column(children: children, mainAxisSize: MainAxisSize.min);
+        return Column(mainAxisSize: MainAxisSize.min, children: children);
       } else {
-        var _children = <Widget>[];
+        var children = <Widget>[];
         for (var i = 0; i < children.length; i += 2) {
           if (i + 1 < children.length) {
-            _children.add(Row(
-              children: [children[i], children[i + 1]],
+            children.add(Row(
               mainAxisSize: MainAxisSize.min,
+              children: [children[i], children[i + 1]],
             ));
           } else {
-            _children.add(children[i]);
+            children.add(children[i]);
           }
         }
-        return Column(mainAxisSize: MainAxisSize.min, children: _children);
+        return Column(mainAxisSize: MainAxisSize.min, children: children);
       }
     });
   }

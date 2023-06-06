@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ScrollControllerTestRoute extends StatefulWidget {
   const ScrollControllerTestRoute({super.key});
@@ -44,7 +40,7 @@ class _ScrollControllerTestRouteState extends State<ScrollControllerTestRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('滚动控制'),
+        title: const Text('滚动控制'),
       ),
       body: Scrollbar(
         child: ListView.builder(
@@ -60,10 +56,10 @@ class _ScrollControllerTestRouteState extends State<ScrollControllerTestRoute> {
       floatingActionButton: !showToTopBtn
           ? null
           : FloatingActionButton(
-              child: Icon(Icons.arrow_upward),
+              child: const Icon(Icons.arrow_upward),
               onPressed: () {
                 _controller.animateTo(.0,
-                    duration: Duration(milliseconds: 200), curve: Curves.ease);
+                    duration: const Duration(milliseconds: 200), curve: Curves.ease);
               }),
     );
   }

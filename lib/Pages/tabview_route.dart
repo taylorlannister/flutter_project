@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class TabViewRoute1 extends StatefulWidget {
   const TabViewRoute1({super.key});
@@ -31,6 +29,7 @@ class _TabViewRoute1State extends State<TabViewRoute1>
   Widget build(BuildContext context) {
     return Scaffold(
         body: TabBarView(
+          controller: _tabController,
           children: tabs.map((e) {
             return KeepAlive(
                 keepAlive: true,
@@ -39,10 +38,9 @@ class _TabViewRoute1State extends State<TabViewRoute1>
                   child: Text(e, textScaleFactor: 5),
                 ));
           }).toList(),
-          controller: _tabController,
         ),
         appBar: AppBar(
-          title: Text("App name"),
+          title: const Text("App name"),
           bottom: TabBar(
               controller: _tabController,
               tabs: tabs.map((e) => Tab(text: e)).toList()),

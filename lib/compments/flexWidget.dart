@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class FlexWidget extends StatefulWidget {
   const FlexWidget({super.key});
@@ -51,7 +48,7 @@ class _FlexWidgetState extends State<FlexWidget> {
                     color: Colors.red,
                   ),
                 ),
-                Spacer(
+                const Spacer(
                   flex: 1,
                 ),
                 Expanded(

@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/Pages/scaffold_page.dart';
-import 'package:flutter_project/Pages/scroll_controller.dart';
-import 'package:flutter_project/Pages/scroll_notificationTestRoute.dart';
-import 'package:flutter_project/Pages/tabview_route.dart';
-import 'package:flutter_project/compments/image_task.dart';
 import 'package:flutter_project/compments/tabbar.dart';
 
 class MainTabbarPage extends StatefulWidget {

@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_project/Pages/animated_list_page.dart';
-import 'package:flutter_project/Pages/bussiness_page.dart';
 import 'package:flutter_project/Pages/gardlist_page.dart';
-import 'package:flutter_project/Pages/home_page.dart';
 import 'package:flutter_project/Pages/infinitegradview_page.dart';
-import 'package:flutter_project/Pages/school_page.dart';
-import 'package:flutter_project/Pages/scroll_controller.dart';
-import 'package:flutter_project/Pages/scroll_notificationTestRoute.dart';
-import 'package:flutter_project/Pages/tabview_route.dart';
 import 'package:flutter_project/widgets/my_drawer.dart';
 
 class ScaffoldRoute extends StatefulWidget {
@@ -26,14 +18,14 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('App Name'),
+        title: const Text('App Name'),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.share), onPressed: () {})
+          IconButton(icon: const Icon(Icons.share), onPressed: () {})
         ],
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.business), label: 'Business'),
@@ -45,7 +37,7 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
       ),
       body: PageView(
         controller: _controller,
-        children: <Widget>[
+        children: const <Widget>[
           GradListPage(),
           AnimatedListRoute(),
           InfiniteGridView(),

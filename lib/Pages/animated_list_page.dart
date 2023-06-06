@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/widgets.dart';
 
 class AnimatedListRoute extends StatefulWidget {
   const AnimatedListRoute({super.key});
@@ -51,15 +48,15 @@ class _AnimatedListRouteState extends State<AnimatedListRoute> {
 
   Widget buildAddBtn() {
     return Positioned(
+      bottom: 30,
+      left: 0,
+      right: 0,
       child: FloatingActionButton(
           onPressed: () {
             data.add('${++counter}');
             globalKey.currentState!.insertItem(data.length - 1);
           },
-          child: Icon(Icons.add)),
-      bottom: 30,
-      left: 0,
-      right: 0,
+          child: const Icon(Icons.add)),
     );
   }
 
@@ -69,7 +66,7 @@ class _AnimatedListRouteState extends State<AnimatedListRoute> {
       key: ValueKey(char),
       title: Text(char),
       trailing: IconButton(
-        icon: Icon(Icons.delete),
+        icon: const Icon(Icons.delete),
         onPressed: () => onDelete(context, index),
       ),
     );
@@ -92,6 +89,6 @@ class _AnimatedListRouteState extends State<AnimatedListRoute> {
           child: item,
         ),
       );
-    }, duration: Duration(milliseconds: 200));
+    }, duration: const Duration(milliseconds: 200));
   }
 }

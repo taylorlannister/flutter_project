@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScrollNotificationTestRoute extends StatefulWidget {
+  const ScrollNotificationTestRoute({super.key});
+
   @override
   _ScrollNotificationTestRouteState createState() =>
       _ScrollNotificationTestRouteState();
@@ -38,8 +40,8 @@ class _ScrollNotificationTestRouteState
             CircleAvatar(
               //显示进度百分比
               radius: 30.0,
-              child: Text(_progress),
               backgroundColor: Colors.black54,
+              child: Text(_progress),
             )
           ],
         ),

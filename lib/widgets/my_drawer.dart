@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -28,7 +26,7 @@ class MyDrawer extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Wendux",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   )
@@ -37,14 +35,14 @@ class MyDrawer extends StatelessWidget {
             ),
             Expanded(
               child: ListView(
-                children: <Widget>[
+                children: const <Widget>[
                   ListTile(
-                    leading: const Icon(Icons.add),
-                    title: const Text('Add account'),
+                    leading: Icon(Icons.add),
+                    title: Text('Add account'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.settings),
-                    title: const Text('Manage accounts'),
+                    leading: Icon(Icons.settings),
+                    title: Text('Manage accounts'),
                   ),
                 ],
               ),
