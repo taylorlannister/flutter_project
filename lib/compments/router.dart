@@ -11,7 +11,7 @@ class NewRoute extends StatelessWidget {
         appBar: AppBar(
           title: const Text("New route"),
         ),
-        body: const Column(
+        body: Column(
           children: [
             TaskItem(label: "label1 is a test"),
             TaskItem(label: "label2 is a test 2"),
