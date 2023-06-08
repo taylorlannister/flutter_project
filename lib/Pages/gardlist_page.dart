@@ -14,7 +14,9 @@ class _GradListPageState extends State<GradListPage> {
     Colors.purple,
     Colors.orange,
     Colors.deepOrangeAccent,
-    Colors.yellow
+    Colors.yellow,
+    Colors.orangeAccent,
+    Colors.greenAccent,
   ];
 
   List<Widget> buildWidget(BuildContext context) {
@@ -25,6 +27,8 @@ class _GradListPageState extends State<GradListPage> {
       const Icon(Icons.all_inclusive),
       const Icon(Icons.beach_access),
       const Icon(Icons.cake),
+      const Icon(Icons.free_breakfast),
+      const Icon(Icons.free_breakfast),
       const Icon(Icons.free_breakfast)
     ];
 
@@ -40,12 +44,28 @@ class _GradListPageState extends State<GradListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: GridView(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 120,
-                mainAxisSpacing: 10,
-                mainAxisExtent: 190,
-                crossAxisSpacing: 10),
-            children: buildWidget(context)));
+        body: Column(
+      children: <Widget>[
+        buildSearchTextField(),
+        Expanded(
+            child: GridView(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 90,
+                    mainAxisSpacing: 20,
+                    mainAxisExtent: 50,
+                    crossAxisSpacing: 10),
+                children: buildWidget(context))),
+      ],
+    ));
+  }
+
+  Widget buildSearchTextField() {
+    return Container(
+        padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
+        child: const TextField(
+            decoration: InputDecoration(
+                labelText: '请输入商品',
+                border: InputBorder.none,
+                icon: Icon(Icons.shopping_cart))));
   }
 }

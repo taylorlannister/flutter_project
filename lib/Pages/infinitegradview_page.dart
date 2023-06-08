@@ -28,7 +28,7 @@ class _InfiniteGridViewState extends State<InfiniteGridView> {
       itemBuilder: (context, index) {
         //如果显示到最后一个并且Icon总数小于200时继续获取数据
         if (index == _icons.length - 1 && _icons.length < 200) {
-          _retrieveIcons();
+          // _retrieveIcons();
         }
         return Icon(_icons[index]);
       },

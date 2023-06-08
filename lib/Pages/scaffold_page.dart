@@ -12,7 +12,7 @@ class ScaffoldRoute extends StatefulWidget {
 }
 
 class _ScaffoldRouteState extends State<ScaffoldRoute> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
   final PageController _controller = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,6 @@ class _ScaffoldRouteState extends State<ScaffoldRoute> {
         children: const <Widget>[
           GradListPage(),
           AnimatedListRoute(),
-          InfiniteGridView(),
           InfiniteGridView()
         ],
       ),

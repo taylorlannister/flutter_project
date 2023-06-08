@@ -1,11 +1,8 @@
-
-
 import 'package:dio/dio.dart';
 // import 'package:flutter_etamine_app/Base/Instance/user_share_instance.dart';
 // import 'package:flutter_etamine_app/NetWork/API/Config/api_config.dart';
 
 class AuthHeaderInterceptor extends Interceptor {
-
   // @override
 
   // Future<dynamic> onRequest(RequestOptions options) async{
@@ -24,9 +21,12 @@ class AuthHeaderInterceptor extends Interceptor {
   // }
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    // TODO: implement onRequest  
+    // TODO: implement onRequest
+    final Map<String, String> headers = {};
+    headers['Content-type'] = 'application/json';
+    headers['authen-type'] = 'V2';
+    headers['channelPlatform'] = 'supplier';
+    options.headers = headers;
     super.onRequest(options, handler);
   }
-
-  
 }
