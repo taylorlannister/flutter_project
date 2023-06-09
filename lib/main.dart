@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/Router/pages.dart';
 import 'package:flutter_project/Router/router.dart';
 import 'package:flutter_project/compments/image_task.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -34,11 +35,21 @@ class MyApp extends StatelessWidget {
     //   title: "Flutter Demo",
     //   initialRoute: TaylorRouter.Home,
     // );
-    return GetMaterialApp(
-      title: "Fullter Demo",
-      initialRoute: TaylorRouter.INITIAL,
-      getPages: Pages.routes,
-    );
+    // return GetMaterialApp(
+    //   title: "Fullter Demo",
+    //   initialRoute: TaylorRouter.INITIAL,
+    //   getPages: Pages.routes,
+    // )},)
+    // );
+    return ScreenUtilInit(
+        designSize: const Size(750, 1334),
+        builder: (context, child) {
+          return GetMaterialApp(
+            title: "Fullter Demo",
+            initialRoute: TaylorRouter.INITIAL,
+            getPages: Pages.routes,
+          );
+        });
   }
 }
 

@@ -1,0 +1,4 @@
+enum HomepageWidgetType {
+  category,
+  business,
+}
