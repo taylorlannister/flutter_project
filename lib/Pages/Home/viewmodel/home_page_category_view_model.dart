@@ -18,77 +18,22 @@ class HomePageCategoryViewModel {
       ];
 
   List<HomePageGoodsModel> get goodsList => [
-        HomePageGoodsModel(
-            Icon(Icons.access_alarm_sharp),
-            Colors.red,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.qr_code_2_outlined),
-            Colors.green,
-            Image.asset(
-                    '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png')
-                as Image,
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.earbuds),
-            Colors.purple,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.radar),
-            Colors.orange,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.vape_free),
-            Colors.deepOrangeAccent,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.car_crash),
-            Colors.yellow,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.ads_click_rounded),
-            Colors.black12,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.bubble_chart),
-            Colors.orangeAccent,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.bubble_chart),
-            Colors.orangeAccent,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234'),
-        HomePageGoodsModel(
-            Icon(Icons.bubble_chart),
-            Colors.orangeAccent,
-            Image.asset(
-                '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
-            '物美价廉的小商品',
-            '1234')
+        HomePageGoodsModel(Icon(Icons.access_alarm_sharp), Colors.red,
+            Image.asset('assets/images/shose1.jpeg'), '耐克一代', '99.9'),
+        HomePageGoodsModel(Icon(Icons.qr_code_2_outlined), Colors.green,
+            Image.asset('assets/images/shose2.jpeg'), '耐尔二', '12.2'),
+        HomePageGoodsModel(Icon(Icons.earbuds), Colors.purple,
+            Image.asset('assets/images/shose3.jpeg'), '欧文三代', '11.4'),
+        HomePageGoodsModel(Icon(Icons.radar), Colors.orange,
+            Image.asset('assets/images/shose4.jpeg'), '安踏', '15.6'),
+        HomePageGoodsModel(Icon(Icons.vape_free), Colors.deepOrangeAccent,
+            Image.asset('assets/images/shose5.jpeg'), '鸿星尔克', '1.2'),
+        HomePageGoodsModel(Icon(Icons.car_crash), Colors.yellow,
+            Image.asset('assets/images/shose6.jpeg'), '耐克', '354'),
+        HomePageGoodsModel(Icon(Icons.ads_click_rounded), Colors.black12,
+            Image.asset('assets/images/shose7.jpeg'), '詹姆士', '699'),
+        HomePageGoodsModel(Icon(Icons.bubble_chart), Colors.orangeAccent,
+            Image.asset('assets/images/shose8.jpeg'), '德隆', '499'),
       ];
   get modelList => [categoryList, goodsList];
 }

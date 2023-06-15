@@ -68,10 +68,7 @@ class _GradListPageState extends State<GradListPage> {
           shadowColor: Colors.amberAccent,
           actions: <Widget>[
             IconButton(
-                icon: const Icon(Icons.message_rounded),
-                onPressed: () {
-                  print('何必呢?');
-                })
+                icon: const Icon(Icons.message_rounded), onPressed: () {})
           ],
         ),
         body: buildItem());

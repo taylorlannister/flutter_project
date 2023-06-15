@@ -26,7 +26,7 @@ class _GoodsWidgetState extends State<GoodsWidget> {
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: categoryIconWidth,
                 mainAxisSpacing: 10,
-                childAspectRatio: 0.6,
+                childAspectRatio: 0.62,
                 crossAxisSpacing: 10),
             physics: NeverScrollableScrollPhysics(),
             children: widget.list
@@ -35,14 +35,46 @@ class _GoodsWidgetState extends State<GoodsWidget> {
                         children: <Widget>[
                           SizedBox(height: 15),
                           e.image,
-                          Text(
-                              style: TextStyle(color: Colors.orange),
-                              e.content),
+                          // Text(
+                          // style: TextStyle(color: Colors.orange),
+                          // e.content),
                           Text('售价: ¥${e.price}'),
-                          Text(style: TextStyle(color: e.color), e.content)
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                Text(
+                                    style: TextStyle(color: e.color),
+                                    e.content),
+                                SizedBox(
+                                  width: 15,
+                                ),
+                                buildBuyWidget(),
+                                SizedBox(
+                                  width: 10,
+                                )
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ))
                 .toList()));
   }
+
+  Widget buildBuyWidget() {
+    return Container(
+      width: 25,
+      height: 25,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          image:
+              DecorationImage(image: AssetImage('assets/images/gouwuche.png'))),
+    );
+  }
+
+  buyAnimation() {}
 }

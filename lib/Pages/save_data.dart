@@ -18,6 +18,11 @@ class _SaveDataPageState extends State<SaveDataPage> {
   final _passwordController = TextEditingController();
 
   @override
+  void initState() {
+    // TODO: implement initState
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
