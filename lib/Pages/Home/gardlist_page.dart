@@ -1,7 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Pages/Home/enum/home_page_widget_type.dart';
+import 'package:flutter_project/Pages/Home/viewmodel/home_page_category_view_model.dart';
+import 'package:flutter_project/Pages/Home/widget/goods_widget.dart';
+import 'package:flutter_project/Pages/Home/widget/recommend_category.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GradListPage extends StatefulWidget {
@@ -14,46 +15,7 @@ class GradListPage extends StatefulWidget {
 class _GradListPageState extends State<GradListPage> {
   static final categoryIconWidth = (ScreenUtil().screenWidth - 30) / 4;
   static final goodsWidth = (ScreenUtil().screenWidth - 20) / 2;
-
-  static final widgetTypes = [
-    HomepageWidgetType.category,
-    HomepageWidgetType.business
-  ];
-  final colorSet = [
-    Colors.blue,
-    Colors.green,
-    Colors.purple,
-    Colors.orange,
-    Colors.deepOrangeAccent,
-    Colors.yellow,
-    Colors.orangeAccent,
-    Colors.greenAccent,
-  ];
-
-  Widget buildWidget(BuildContext context) {
-    var widgetList = <Widget>[];
-    List iconsSet = [
-      const Icon(Icons.ac_unit),
-      const Icon(Icons.airport_shuttle),
-      const Icon(Icons.all_inclusive),
-      const Icon(Icons.beach_access),
-      const Icon(Icons.cake),
-      const Icon(Icons.free_breakfast),
-      const Icon(Icons.free_breakfast),
-      const Icon(Icons.free_breakfast)
-    ];
-
-    for (var i = 0; i < iconsSet.length; i++) {
-      widgetList.add(Container(
-        color: colorSet[i],
-        child: iconsSet[i],
-      ));
-    }
-    return Container(
-      color: Colors.blue,
-      child: Icon(Icons.pinch_outlined),
-    );
-  }
+  HomePageCategoryViewModel viewModel = HomePageCategoryViewModel();
 
   Widget buildGoodsWidget(BuildContext context) {
     var widgetList = <Widget>[];
@@ -67,12 +29,12 @@ class _GradListPageState extends State<GradListPage> {
 
   Widget buildItem() {
     return ListView.builder(
-      itemCount: itemCount(HomepageWidgetType.category),
+      itemCount: viewModel.modelList.length,
       itemBuilder: (context, index) {
-        if (widgetTypes == HomepageWidgetType.category) {
-          return buildWidget(context);
+        if (index == 0) {
+          return RecommendCategoryWidget(viewModel.categoryList);
         } else {
-          return buildGoodsWidget(context);
+          return GoodsWidget(list: viewModel.goodsList);
         }
       },
     );
@@ -80,7 +42,7 @@ class _GradListPageState extends State<GradListPage> {
 
   Widget buildSearchTextField() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(0, 0, 30, 0),
+      padding: const EdgeInsets.fromLTRB(15, 0, 10, 0),
       child: const TextField(
           decoration: InputDecoration(
               hintText: '请输入商品',
@@ -104,45 +66,14 @@ class _GradListPageState extends State<GradListPage> {
         appBar: AppBar(
           title: buildSearchTextField(),
           shadowColor: Colors.amberAccent,
+          actions: <Widget>[
+            IconButton(
+                icon: const Icon(Icons.message_rounded),
+                onPressed: () {
+                  print('何必呢?');
+                })
+          ],
         ),
         body: buildItem());
   }
 }
-    //   children: [
-    //   Expanded(
-    //       child: GridView(
-    //           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-    //               maxCrossAxisExtent: categoryIconWidth,
-    //               mainAxisSpacing: 10,
-    //               childAspectRatio: 1,
-    //               crossAxisSpacing: 10),
-    //           children: buildWidget(context))),
-    //   Expanded(
-    //       child: GridView(
-    //           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-    //               maxCrossAxisExtent: goodsWidth,
-    //               mainAxisSpacing: 10,
-    //               childAspectRatio: 1,
-    //               crossAxisSpacing: 10),
-    //           children: buildGoodsWidget(context))),
-    // ]);
-          // body: Column(
-        //   children: <Widget>[
-        //     Expanded(
-        //         child: GridView(
-        //             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        //                 maxCrossAxisExtent: categoryIconWidth,
-        //                 mainAxisSpacing: 10,
-        //                 childAspectRatio: 1,
-        //                 crossAxisSpacing: 10),
-        //             children: buildWidget(context))),
-        //     Expanded(
-        //         child: GridView(
-        //             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        //                 maxCrossAxisExtent: goodsWidth,
-        //                 mainAxisSpacing: 10,
-        //                 childAspectRatio: 1,
-        //                 crossAxisSpacing: 10),
-        //             children: buildGoodsWidget(context))),
-        //   ],
-        // ));

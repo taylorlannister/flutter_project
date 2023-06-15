@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Pages/event_bus.dart';
 import 'package:flutter_project/widgets/notification_route.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SaveDataPage extends StatefulWidget {
@@ -12,6 +14,8 @@ class SaveDataPage extends StatefulWidget {
 
 class _SaveDataPageState extends State<SaveDataPage> {
   Future<SharedPreferences> per = SharedPreferences.getInstance();
+  final _nameController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +23,12 @@ class _SaveDataPageState extends State<SaveDataPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(onPressed: saveData, child: const Text('保存111数据')),
-          ElevatedButton(onPressed: showData, child: const Text('刷新显示数据')),
-          const NotificationRoute(),
-          buildLoginInputTextField()
+          // const NotificationRoute(),
+          buildLoginInputTextField(),
+          ElevatedButton(onPressed: saveData, child: const Text('登录保存输入数据')),
+          ElevatedButton(
+              onPressed: () => {showData(context)},
+              child: const Text(' 显示保存的数据  '))
         ],
       ),
     );
@@ -30,19 +36,28 @@ class _SaveDataPageState extends State<SaveDataPage> {
 
   Future<void> saveData() async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString('key', 'saveValue112');
-    eventBus.fire(EventFn({'a': 'b', 'c': 'e'}));
+    // prefs.setString('key', 'saveValue112');
+    prefs.setString('UserName', _nameController.text);
+    prefs.setString('Password', _passwordController.text);
+    eventBus.fire(EventFn({'UserName': 'b', 'Password': 'e'}));
   }
 
-  Future<void> showData() async {
+  Future<void> showData(BuildContext context) async {
     final per = await SharedPreferences.getInstance();
-    print(per.getString('key'));
+    print(per.getString('UserName'));
+    print(per.getString('Password'));
+    showToast(
+        context: context,
+        '输入账是: ${per.getString('UserName')}, \n  输入密码是: ${per.getString('Password')}');
   }
 
   Widget buildLoginInputTextField() {
     return Column(
       children: [
+        Image.asset(
+            '/Users/liuzhikang/flutter_project/.vscode/images/home_laster_enquiry_push_order.png'),
         TextField(
+          controller: _nameController,
           autofocus: true,
           decoration: InputDecoration(
               labelText: '用户名',
@@ -50,6 +65,7 @@ class _SaveDataPageState extends State<SaveDataPage> {
               prefixIcon: Icon(Icons.person)),
         ),
         TextField(
+          controller: _passwordController,
           decoration: InputDecoration(
               labelText: "密码",
               hintText: "您的登录密码",

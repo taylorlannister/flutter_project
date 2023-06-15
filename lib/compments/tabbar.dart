@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Pages/Home/gardlist_page.dart';
+import 'package:flutter_project/Pages/Login/login.dart';
 import 'package:flutter_project/Pages/layout_page.dart';
 import 'package:flutter_project/Pages/home_page.dart';
 import 'package:flutter_project/Pages/save_data.dart';
@@ -31,10 +32,10 @@ class _TabbarState extends State<Tabbar> {
             items: const [
               BottomNavigationBarItem(label: '首页', icon: Icon(Icons.wallet)),
               BottomNavigationBarItem(
-                  label: '用户中心', icon: Icon(Icons.abc_sharp)),
+                  label: '各种布局', icon: Icon(Icons.abc_sharp)),
               BottomNavigationBarItem(
                   label: '数据持久化', icon: Icon(Icons.ac_unit)),
-              BottomNavigationBarItem(label: '各种布局', icon: Icon(Icons.folder))
+              BottomNavigationBarItem(label: '用户中心', icon: Icon(Icons.folder))
             ],
           ),
           tabBuilder: (context, index) {
@@ -44,9 +45,9 @@ class _TabbarState extends State<Tabbar> {
             } else if (index == 1) {
               return const UserCenterPage();
             } else if (index == 2) {
-              return const SaveDataPage();
-            } else {
               return const LayoutShowingPage();
+            } else {
+              return const LoginPage();
             }
           },
         )
