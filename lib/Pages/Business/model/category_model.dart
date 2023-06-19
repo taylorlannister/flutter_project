@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 class CategoryModel {
   final String type;
-  CategoryModel(this.type);
+  bool isSelected;
+  CategoryModel(this.type, this.isSelected);
 }

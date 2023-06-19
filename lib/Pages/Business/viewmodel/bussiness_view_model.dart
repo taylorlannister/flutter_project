@@ -4,12 +4,12 @@ import 'package:flutter_project/Pages/Business/model/goods_model.dart';
 
 class BussinessViewModel {
   List<CategoryModel> get categoryList => [
-        CategoryModel('安踏'),
-        CategoryModel('鸿星尔克'),
-        CategoryModel('耐克'),
-        CategoryModel('锐步'),
-        CategoryModel('回力'),
-        CategoryModel('所有'),
+        CategoryModel('安踏', true),
+        CategoryModel('鸿星尔克', false),
+        CategoryModel('耐克', false),
+        CategoryModel('锐步', false),
+        CategoryModel('回力', false),
+        CategoryModel('所有', false),
       ];
 
   List<GoodsModel> get goodsList => [
